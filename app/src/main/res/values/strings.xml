@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BackendConnection</string>
+    <string name="title_activity_purchase_tickets">PurchaseTicketsActivity</string>
+    <string name="purchaseTicketsButton">Purchase Tickets</string>
+    <string name="passTypeTextViewText">Select Pass Type:</string>
+    <string name="startDateTextViewText">Select Start Date:</string>
+    <string name="validDatesTextViewText"></string>
+    <string name="continueToPurchaseButtonText">Continue to Purchase</string>
+    <string name="paymentInfoTextEditText">Enter Payment Info</string>
+    <string name="purchaseTicketButtonText">Purchase Ticket</string>
+    <string name="paymentReviewTextViewText"></string>
+    <string name="ticketToMainScreenButtonText">Return to Main Screen</string>
+    <string name="viewMapButtonText">View Map</string>
+    <string name="viewTicketButtonText">View Ticket</string>
+    <string-array name="pass_types_array">
+        <item>Please Select</item>
+        <item>1-Day Pass</item>
+        <item>3-Day Pass</item>
+        <item>Week Pass</item>
+        <item>Month Pass</item>
+        <item>Annual Pass</item>
+    </string-array>
+    <string name="title_activity_enter_payment_info">EnterPaymentInfoActivity</string>
+    <string name="title_activity_google_maps">Map</string>
+</resources>

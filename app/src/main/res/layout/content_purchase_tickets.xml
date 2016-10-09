@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_purchase_tickets"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="me.cheenar.backendconnection.PurchaseTicketsActivity">
+
+    <TextView
+        android:text="@string/passTypeTextViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:id="@+id/passTypeTextView" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passTypeSpinner"
+        android:layout_alignTop="@id/passTypeTextView"
+        android:layout_alignBottom="@id/passTypeTextView"
+        android:layout_toEndOf="@id/passTypeTextView"/>
+
+    <TextView
+        android:text="@string/startDateTextViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:layout_below="@id/passTypeTextView"
+        android:textSize="18sp"
+        android:id="@+id/startDateTextView" />
+
+    <TextView
+        android:text="@string/validDatesTextViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:gravity="center_vertical"
+        android:layout_alignTop="@id/startDateTextView"
+        android:layout_alignBottom="@id/startDateTextView"
+        android:layout_toEndOf="@id/startDateTextView"
+        android:layout_marginStart="7dp"
+        android:textSize="18sp"
+        android:id="@+id/validDatesTextView" />
+
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/startDateCalendarView"
+        android:layout_below="@+id/startDateTextView"
+        android:layout_marginTop="10dp" />
+
+    <Button
+        android:text="@string/continueToPurchaseButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/startDateCalendarView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:id="@+id/continueToPurchaseButton"
+        android:onClick="continueToPurchaseButtonClicked" />
+
+</RelativeLayout>
