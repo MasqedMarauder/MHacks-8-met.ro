@@ -128,7 +128,9 @@ app.get('/p/purchase_fare', function(req, res) {
 			}
 			//console.log(res);
 			//console.log("'twas able to complete your request'");
-			res.send("<h1>" + profile_id + "<br>" + fare_type + "<br>" + ticket_id + "</h1>");
+			res.json({
+				"success": "request was success"
+			});
 		});
 	}
 });
