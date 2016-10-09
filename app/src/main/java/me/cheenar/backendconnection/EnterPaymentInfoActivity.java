@@ -33,10 +33,17 @@ public class EnterPaymentInfoActivity extends AppCompatActivity {
         {
             Date start = sdf.parse(startDate);
             long time = start.getTime();
+            long add = -1;
 
-            if(passType == "1-Day Pass")
+            if(passType.equals("1-Day Pass"))
             {
+                add = 86400000;
             }
+            if(passType.equals("3-Day Pass"))
+            {
+                add = (86400000 * 2);
+            }
+            
 
         }
         catch (ParseException e) {
