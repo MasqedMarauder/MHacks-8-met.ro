@@ -83,6 +83,8 @@ public class MyRecyclerViewAdapter extends RecyclerView
             Date start = sdf.parse(s);
             Date end = sdf.parse(e);
 
+            holder.dateTime.setText(mDataset.get(position).getmText2() + " | " + start.toString() + " -> "+ end.toString());
+
             System.out.println(currentDate.getTime());
             System.out.println(start.getTime());
             System.out.println(end.getTime());

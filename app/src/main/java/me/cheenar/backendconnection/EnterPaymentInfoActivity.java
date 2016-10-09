@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,7 +37,6 @@ public class EnterPaymentInfoActivity extends AppCompatActivity {
         Bundle ticketInfo = getIntent().getExtras();
         passType = ticketInfo.getString("passType");
         startDate = ticketInfo.getString("startDate");
-        Toast.makeText(this, startDate, Toast.LENGTH_SHORT).show();
         paymentReviewTextView = (TextView)findViewById(R.id.paymentReviewTextView);
         paymentReviewTextView.setText("Pass Type: " + passType + "\n" + "Start Date: " + startDate);
         endDate = "";
@@ -77,14 +78,14 @@ public class EnterPaymentInfoActivity extends AppCompatActivity {
     }
 
     public void purchaseTicketButtonClicked(View v) {
-        Toast.makeText(EnterPaymentInfoActivity.this, "Purchase Complete!", Toast.LENGTH_LONG).show();
+        //Toast.makeText(EnterPaymentInfoActivity.this, "Purchase Complete!", Toast.LENGTH_LONG).show();
 
-        String s = "http://66.175.213.218/p/purchase_fare?profile_id=" + MainActivity.user.profileID + "&fare_type=" + passType + "&active_start=" + startDate + "&active_end=" + endDate;
-        JSONObject object = null;
+        String s = "http://66.175.213.218/p/purchase_fare?profile_id=" + MainActivity.user.profileID + "&fare_type=" + passType.replace(" ", "%20") + "&active_start=" + startDate + "&active_end=" + endDate;
         try
         {
-            object = MainActivity.getJSONObjectFromURL(s);
-            Log.i("JSON", object.get("success").toString());
+            URL url = new URL(s);
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();
+            Toast.makeText(this, "Successfully Purchased Ticket", Toast.LENGTH_SHORT).show();
         }
         catch(Exception e) {
             e.printStackTrace();
